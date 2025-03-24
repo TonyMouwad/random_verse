@@ -59,6 +59,20 @@
             left: 50%;
             transform: translateX(-50%);
         }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-top: 90px;
+        }
+        .logo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         .screen {
             width: 100%;
             height: 100%;
@@ -146,6 +160,9 @@
     <div class="iphone-frame">
         <div class="notch"></div>
         <div class="camera"></div>
+        <div class="logo">
+            <img id="logo-img" src="team_logo.png" alt="لوجو الفريق">
+        </div>
         <div class="screen">
             <h3 style="color: #aaa;">اكتشف آيتك الخاصة</h3>
             <input type="text" id="name" placeholder="أدخل اسمك هنا">
@@ -162,6 +179,10 @@
             "كل الأشياء تعمل معًا للخير للذين يحبون الله.",
             "أنت مختار ومحبوب من الله، مكرس له ومملوء بالنعمة."
         ];
+
+        const logoImg = document.getElementById("logo-img");
+        const themeBtn = document.getElementById("theme-btn");
+        const body = document.body;
 
         function generateVerse() {
             const nameInput = document.getElementById("name");
@@ -189,27 +210,34 @@
             document.getElementById("reset-btn").classList.add("hidden");
         }
 
-        // Theme Toggle Logic
-        const themeBtn = document.getElementById("theme-btn");
-        const body = document.body;
-
         function toggleTheme() {
             body.classList.toggle("dark-mode");
             const isDarkMode = body.classList.contains("dark-mode");
-            localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
+            // تغيير الأيقونة
             themeBtn.textContent = isDarkMode ? "☀️" : "🌙";
+
+            // تغيير شعار الفريق حسب الوضع
+            logoImg.src = isDarkMode ?  "team_logo.png" : "black.png";
+
+            // حفظ الثيم
+            localStorage.setItem("theme", isDarkMode ? "dark" : "light");
         }
 
         function loadTheme() {
             const savedTheme = localStorage.getItem("theme");
             const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
             const theme = savedTheme || systemTheme;
-            if (theme === "dark") {
+            const isDarkMode = theme === "dark";
+
+            if (isDarkMode) {
                 body.classList.add("dark-mode");
                 themeBtn.textContent = "☀️";
+                logoImg.src = "team_logo.png";
             } else {
                 body.classList.remove("dark-mode");
                 themeBtn.textContent = "🌙";
+                logoImg.src = "black.png";
             }
         }
 
@@ -217,4 +245,3 @@
     </script>
 </body>
 </html>
-
