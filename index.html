@@ -154,6 +154,15 @@
             background: #333;
             color: #fff;
         }
+
+        
+         h3 {
+            color: #272424;
+        }
+        .dark-mode h3 {
+            color: #ada4a4;
+        }
+
     </style>
 </head>
 <body>
@@ -161,10 +170,11 @@
         <div class="notch"></div>
         <div class="camera"></div>
         <div class="logo">
-            <img id="logo-img" src="team_logo.png" alt="لوجو الفريق">
+            <!--<img id="logo-img" src="team_logo.png" alt="لوجو الفريق">-->
+            <a href="second.html"><img id="logo-img" src="team_logo.png" alt="لوجو الفريق"></a>
         </div>
         <div class="screen">
-            <h3 style="color: #aaa;">اكتشف آيتك الخاصة</h3>
+            <h3>اكتشف آيتك الخاصة</h3>
             <input type="text" id="name" placeholder="أدخل اسمك هنا">
             <button id="generate-btn" onclick="generateVerse()">عرض الآية</button>
             <div class="message-box hidden" id="verse"></div>
