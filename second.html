@@ -1,188 +1,94 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html><html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أنا والله - أنا والآخر - أنا ونفسي</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            transition: background 0.3s, color 0.3s;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-            padding-top: 80px; /* لضمان عدم تغطية الهيدر للمحتوى */
-        }
-        section {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        h2, h3 {
-            text-align: center;
-            color: #0056b3;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: #e0e0e0;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        li:hover {
-            background: #cccccc;
-        }
-        .theme-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            text-align: center;
-            background: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .theme-toggle:hover {
-            background: #003f7f;
-        }
-        .dark-mode {
-            background: #121212;
-            color: white;
-        }
-        .dark-mode section {
-            background: #1e1e1e;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        .dark-mode li {
-            background: #333;
-            color: white;
-        }
-        .dark-mode li:hover {
-            background: #444;
-        }
-        .dark-mode h2, .dark-mode h3 {
-            color: #ffd700;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #0056b3;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .message-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-size: 20px;
-            color: #0056b3;
-        }
-        .footer {
-            text-align: center;
-            background: #0056b3;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        .start-point {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #e9e9e9;
-            margin-right: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عادة المكسب المشترك</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    h1, h2, h3 {
+      color: #2e7d32;
+    }
+    ul {
+      list-style-type: square;
+      padding-right: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .highlight {
+      background-color: #e8f5e9;
+      border-right: 4px solid #66bb6a;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .example {
+      background-color: #fffde7;
+      border-right: 4px solid #fbc02d;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="start-point">نقطة انطلاق</div>
-        <a href="index.html" class="message-icon">✉️</a>
-    </div>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-    <div class="container">
-        <section>
-            <h2>أنا والله - خطوات النمو الروحي</h2>
-            <ul>
-                <li>إيمان</li>
-                <li>فضيلة</li>
-                <li>معرفة</li>
-                <li>تعفف</li>
-                <li>صبر</li>
-                <li>تقوى</li>
-                <li>مودة أخوية</li>
-                <li>محبة</li>
-            </ul>
-        </section>
-        <section>
-            <h2>أنا والآخر - بناء العلاقات الناجحة</h2>
-            <ul>
-                <li>احترام الاختلافات</li>
-                <li>التواصل الفعال</li>
-                <li>التعاون والعمل الجماعي</li>
-                <li>التعاطف والتفهم</li>
-                <li>التسامح وقبول الآخر</li>
-                <li>الإصغاء الجيد</li>
-                <li>حل النزاعات بحكمة</li>
-                <li>التعامل بأمانة ونزاهة</li>
-            </ul>
-        </section>
-        <section>
-            <h2>أنا ونفسي - تطوير الذات</h2>
-            <ul>
-                <li>تنظيم الوقت</li>
-                <li>تحديد الأهداف</li>
-                <li>الثقة بالنفس</li>
-                <li>التحكم في المشاعر</li>
-                <li>تطوير المهارات الشخصية</li>
-                <li>اتخاذ القرارات بحكمة</li>
-                <li>التعلم المستمر</li>
-                <li>التحفيز الذاتي</li>
-            </ul>
-        </section>
-    </div>
-    <div class="footer">
-        &copy; 2025 اجتماع البابا أثناسيوس الرسولي للشباب. جميع الحقوق محفوظة.<br>
-        شكرًا لجميع المشاركين في إعداد هذا المحتوى، ونأمل أن يكون مصدر إلهام وتوجيه للجميع.
-    </div>
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
-            let themeButton = document.querySelector(".theme-toggle");
-            themeButton.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-        }
-    </script>
+  <div class="container">
+    <h1>📘 عادة 4: فكر في المكسب المشترك (Win/Win)</h1><div class="section">
+  <h2>ما معنى مكسب/مكسب؟</h2>
+  <p>يعني مش لازم حد يخسر عشان التاني يكسب. نكسب سوا من غير تنازل عن المبادئ أو العلاقة.</p>
+</div>
+
+<div class="section">
+  <h2>إزاي أعيش العادة؟</h2>
+  <ul>
+    <li><strong>غيّر تفكيرك:</strong> شوف إن فيه فرص كفاية لينا كلنا.</li>
+    <li><strong>ابني طابعك:</strong> نزاهة + نضج + عقلية وفرة.</li>
+    <li><strong>كوّن ثقة:</strong> عامل الناس بإحترام وراكم رصيد حب وثقة.</li>
+    <li><strong>اسمع بتركيز:</strong> افهم الطرف التاني قبل ما ترد.</li>
+    <li><strong>اتفق بوضوح:</strong> حدد الأدوار، الأهداف، المعايير.</li>
+    <li><strong>دوّر على حل تالت:</strong> فكر بإبداع عشان ترضي الكل.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>أنماط العلاقات الستة</h2>
+  <ul>
+    <li><strong>مكسب/خسارة:</strong> أنا أكسب وأنت تخسر.</li>
+    <li><strong>خسارة/مكسب:</strong> أنا أتنازل وأنت تكسب.</li>
+    <li><strong>خسارة/خسارة:</strong> كلنا نخسر!</li>
+    <li><strong>مكسب فقط:</strong> أنا أنجح والباقي مش مهم.</li>
+    <li><strong>مكسب/مكسب:</strong> نكسب مع بعض.</li>
+    <li><strong>لا اتفاق:</strong> ننسحب بهدوء بدل خناقة.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>أمثلة كتابية لكل نمط</h2>
+  <div class="highlight"><strong>مكسب/مكسب:</strong> إبراهيم ولوط لما حصلت خناقة بين الرعاة، إبراهيم قال للوط: "لا تكن مخاصمة بيني وبينك" واداله حرية يختار. (تكوين 13)</div>
+  <div class="highlight"><strong>مكسب/خسارة:</strong> يونان النبي كان عايز نينوى تهلك عشان كلمته تتحقق، رغم توبتهم وربنا رحمهم. (سفر يونان)</div>
+  <div class="highlight"><strong>خسارة/مكسب:</strong> بيلاطس البنطي وافق على صلب المسيح رغم إنه مقتنع ببراءته، عشان يرضي اليهود. (متى 27)</div>
+  <div class="highlight"><strong>خسارة/خسارة:</strong> شمشون لما قال: "تموت نفسي مع الفلسطينيين"، خسر نفسه وعدوه معًا. (قضاة 16)</div>
+  <div class="highlight"><strong>مكسب فقط:</strong> الابن الأكبر في مثل الابن الضال، رفض يفرح برجوع أخوه لأنه شايف نفسه أحق بالفرح. (لوقا 15)</div>
+  <div class="highlight"><strong>لا اتفاق:</strong> بولس وبرنابا اختلفوا على مارمرقس فافترقوا، ودي صورة محترمة للخلاف لما مفيش اتفاق. (أعمال 15)</div>
+</div>
+
+<div class="section">
+  <h2>🌟 خلاصة</h2>
+  <p>القائد الناجح بيفكر: إزاي نكسب سوا؟ مش إزاي أكسب لوحدي.</p>
+</div>
+
+  </div>
 </body>
 </html>
